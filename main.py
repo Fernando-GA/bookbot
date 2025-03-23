@@ -1,7 +1,8 @@
 from stats import *
 import sys
+
 def main():
-    book_text = get_book_text()
+    book_text = get_book_text(sys.argv[1])
     words_amount = count_words(book_text)
     characters_amount = count_characters(book_text)
     sorted_dictionarie = sort_dict(characters_amount)
@@ -21,4 +22,8 @@ Found {words_amount} total words
     
     print("============= END ===============")
 
-main()
+if len(sys.argv) !=2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+else:
+    main()
