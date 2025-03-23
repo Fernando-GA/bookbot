@@ -18,4 +18,21 @@ def count_characters(text):
             total_char[char] = 1
         else:
             total_char[char] += 1
-           
+
+    return total_char
+
+def sort_on(dict):
+    return dict["amount"]
+
+def sort_dict(char_dict):
+    dictionarie_list = []
+    for char in char_dict:
+        value = char_dict[char]
+        dictionarie={
+            "character":char,"amount":value
+        }
+        dictionarie_list.append(dictionarie)
+    
+    dictionarie_list.sort(reverse=True,key=sort_on)
+
+    return dictionarie_list
